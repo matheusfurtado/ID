@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="../WEB-INF/templates/base.xhtml">
+	<h:outputStylesheet library="css" name="cadastrar.css"></h:outputStylesheet>
+	<ui:define name="page-title">
+		<h1>
+			Funcionario - <small>cadastro</small>
+		</h1>
+	</ui:define>
+	<ui:define name="content">
+		<div class="panel panel-default col-md-9">
+			<div class="panel-body">
+				<h:form role="form">
+					<h:inputHidden value="#{administradorMb.administrador.id}" />
+					<h:panelGroup
+						rendered="#{not empty administradorMb.administrador.id}">
+						<div class="form-group col-md-10">
+							<h:outputLabel value="Código" />
+							<h:inputText readonly="true"
+								value="#{administradorMb.administrador.id}"
+								styleClass="form-control" />
+						</div>
+					</h:panelGroup>
+					<div class="form-group col-md-10">
+						<h:outputLabel value="SobreNome" />
+						<h:inputText value="#{administradorMb.administrador.sobrenome}"
+							styleClass="form-control" />
+					</div>
+					<div class="form-group col-md-10">
+						<h:outputLabel value="CPF" />
+						<h:inputText value="#{administradorMb.administrador.cpf}"
+							styleClass="form-control" />
+					</div>
+					<div class="form-group col-md-10">
+						<h:outputLabel value="RG" />
+						<h:inputText value="#{administradorMb.administrador.rg}"
+							styleClass="form-control" />
+					</div>
+					<div class="form-group col-md-10">
+						<h:outputLabel value="Data de Nascimento" />
+						<h:inputText
+							value="#{administradorMb.administrador.datanascimento}"
+							styleClass="form-control" />
+					</div>
+					<div class="form-group col-md-10">
+						<h:outputLabel value="E-Mail" />
+						<h:inputText value="#{administradorMb.administrador.email}"
+							styleClass="form-control" />
+					</div>
+					<div class="form-group col-md-10">
+						<h:outputLabel value="Sexo" />
+						<h:inputText value="#{administradorMb.administrador.sexo}"
+							styleClass="form-control" />
+					</div>
+					<div class="form-group col-md-10">
+						<h:outputLabel value="Pais" />
+						<h:inputText value="#{administradorMb.administrador.pais}"
+							styleClass="form-control" />
+					</div>
+					<div class="form-group col-md-10">
+						<h:outputLabel value="Estado" />
+						<h:inputText value="#{administradorMb.administrador.estado}"
+							styleClass="form-control" />
+					</div>
+					<div class="form-group col-md-10">
+						<h:outputLabel value="Cidade" />
+						<h:inputText value="#{administradorMb.administrador.cidade}"
+							styleClass="form-control" />
+					</div>
+					<div class="form-group col-md-10">
+						<h:outputLabel value="Bairro" />
+						<h:inputText value="#{administradorMb.administrador.bairro}"
+							styleClass="form-control" />
+					</div>
+					<div class="form-group col-md-10">
+						<h:outputLabel value="Rua" />
+						<h:inputText value="#{administradorMb.administrador.rua}"
+							styleClass="form-control" />
+					</div>
+					<div class="form-group col-md-10">
+						<h:outputLabel value="Complemento" />
+						<h:inputText value="#{administradorMb.administrador.complemento}"
+							styleClass="form-control" />
+					</div>
+					<div class="form-group col-md-10">
+						<h:outputLabel value="Numero" />
+						<h:inputText value="#{administradorMb.administrador.numero}"
+							styleClass="form-control" />
+					</div>
+					<div class="form-group col-md-10">
+						<h:outputLabel value="Telefone" />
+						<h:inputText value="#{administradorMb.administrador.telefone}"
+							styleClass="form-control" />
+					</div>
+					<div class="form-group col-md-10">
+						<h:outputLabel value="Usuário" />
+						<h:inputText value="#{administradorMb.administrador.usuario}"
+							styleClass="form-control" />
+					</div>
+					<div class="form-group col-md-10">
+						<h:outputLabel value="Senha" />
+						<h:inputSecret value="#{administradorMb.administrador.senha}"
+							styleClass="form-control" />
+					</div>
+					<div class="form-group col-md-10">
+						<h:commandButton action="#{administradorMb.salvar}"
+							styleClass="btn btn-default botaoEnviar" value="Salvar" />
+					</div>
+				</h:form>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>

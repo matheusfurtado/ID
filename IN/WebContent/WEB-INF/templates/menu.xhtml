@@ -1,0 +1,78 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+	<div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+			</div>
+			<div class="collapse navbar-collapse">
+				<ul id="menu_principal" class="nav navbar-nav">
+					<li><h:link outcome="/index" value="Home" /></li>
+					<li><h:link outcome="/quemsomos" value="Quem Somos" /></li>
+					<li><h:link outcome="/contato" value="Contato" /></li>
+				</ul>
+				<form class="navbar-form navbar-left" role="search">
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="Pesquisar"></input>
+					</div>
+					<button type="submit" class="btn btn-default">
+						<span class="glyphicon glyphicon-search"></span>
+					</button>
+				</form>
+				<ul id="menu_cadastrar" class="nav navbar-nav navbar-inverse">
+					<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown">Cadastrar</a>
+						<ul class="dropdown-menu" role="menu">
+							<li><h:link outcome="/cadastrarCliente"
+									value="Cadastro de Clientes" /></li>
+							<li><h:link outcome="/cadastrarAnuncio"
+									value="Cadastro de Anuncios" /></li>
+						</ul></li>
+				</ul>
+
+				<ul id="menu_principal" class="nav navbar-nav">
+					<li><a class="btn btn-lg" data-toggle="modal"
+						data-target="#myEntrar">Entrar</a></li>
+				</ul>
+
+				<ul id="menu_admin" class="nav navbar-nav navbar-right">
+					<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span>
+							ADM <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li><h:link outcome="/admin/cadastrarAdministrador"
+									value="Cadastro de Administrador" /></li>
+							<li><h:link outcome="/admin/cadastrarCategoria"
+									value="Cadastrar de Categoria" /></li>
+							<li><h:link outcome="/admin/listaClientes"
+									value="Lista de Clientes" /></li>
+							<li><h:link outcome="/admin/listaAnuncios"
+									value="Lista de Anuncios" /></li>
+							<li><h:link outcome="/admin/listaAdmistrador"
+									value="Lista de Administradores" /></li>
+							<li><h:link outcome="/admin/listaCategoria"
+									value="Lista de Categorias" /></li>
+						</ul></li>
+				</ul>
+				<ul id="menu_cadastrar" class="nav navbar-nav navbar-inverse">
+					<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown">Categorias</a>
+						<ul class="dropdown-menu" role="menu">
+							<ui:repeat var="categoria" value="#{categoriaMb.listCategorias}">
+								<li><h:link outcome="/index" value="#{categoria.nome}" /></li>
+							</ui:repeat>
+						</ul></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<h:outputScript library="js" name="menu.js"></h:outputScript>
+</ui:composition>

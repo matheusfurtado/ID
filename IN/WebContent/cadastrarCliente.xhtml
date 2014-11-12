@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<ui:composition template="WEB-INF/templates/base.xhtml">
+	<ui:define name="title">Inovar Divulgacões</ui:define>
+	<ui:define name="content">
+		<h:outputStylesheet library="css" name="cadastrar.css"></h:outputStylesheet>
+		<div id="texto">
+			<h1 class="contato">Cadastrar Clientes</h1>
+			<div id="cadastro">
+				<h:form align="center" role="form" enctype="multipart/form-data">
+					<div class="form-group col-md-10">
+						<h:outputLabel value="Nome" />
+						<h:inputText value="#{pessoaMb.pessoa.nome}"
+							styleClass="form-control" />
+					</div>
+					<div class="form-group col-md-10">
+						<h:outputLabel value="CPF" />
+						<h:inputText value="#{pessoaMb.pessoa.cpf}"
+							styleClass="form-control" />
+					</div>
+					<div class="form-group col-md-10">
+						<h:outputLabel value="Data de Nascimento" />
+						<h:inputText value="#{pessoaMb.pessoa.dataNascimento}"
+							styleClass="form-control" />
+					</div>
+					<div class="form-group col-md-10">
+						<h:outputLabel value="E-Mail" />
+						<h:inputText value="#{pessoaMb.pessoa.email}"
+							styleClass="form-control" />
+					</div>
+					<div class="form-group col-md-10">
+						<h:outputLabel value="Usuário" />
+						<h:inputText value="#{pessoaMb.pessoa.usuario}"
+							styleClass="form-control" />
+					</div>
+					<div class="form-group col-md-10">
+						<h:outputLabel value="Senha" />
+						<h:inputSecret value="#{pessoaMb.pessoa.senha}"
+							styleClass="form-control" />
+					</div>
+					<h:commandButton action="#{pessoaMb.salvar}"
+						styleClass="btn btn-default botaoEnviar" value="Cadastrar" />
+				</h:form>
+			</div>
+		</div>
+		<ui:define name="rodape"></ui:define>
+	</ui:define>
+</ui:composition>
+</html>
